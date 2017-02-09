@@ -1,83 +1,67 @@
-Ansible Role Template
-=====================
+$ROLE for Ansible
+=================
 
-A template for an Ansible-role, adding Vagrant-testing support to the 
-default Ansible-role skeleton.
-
-Ansible is a great tool, and trying things out with a virtual-machine is a
-great way to learn, try things out, and test changes. But if you're trying
-to learn Ansible and Vagrant/Virtualbox all at once, configuring a test-setup
-just right can be a steep learning curve. This template demonstrates how
-to set-up Vagrant to test your new Ansible role.
+A role for deploying and configuring [$ROLE](http://$role.com) and extensions on unix hosts using [Ansible](http://www.ansible.com/).
 
 
-tl;dr:
-------
-**To get this template running:**
+Supports
+--------
 
-    git clone git@github.com:timstaley/ansible-role-template.git roletemplate
-    
-NB the local folder-name is important - that's how we refer back to the
-role from the test-script, and so the folder-name should match the 
-role-name.
+Supported targets:
 
-    cd roletemplate/vagrant
-    vagrant up
+- Ubuntu 12.04 "Precise Pangolin"
+- Debian 8 "Jessie"
+- ...
 
-**To use this template for your own stand-alone role:**
+Dependencies:
 
-    git clone git@github.com:timstaley/ansible-role-template.git myrolename
-Now edit myrolename/tests/test-roletemplate.yml to change the role name 
-to your own, accordingly. Then get started making changes to write your
-own role.
+- None
 
-Notes
-------
-*Vagrantfile* sets up a testing virtual-machine, 
-by default named `roletestingvm` (see [Vagrantfile](vagrant/Vagrantfile)).
-This should be renamed to something sensible for your role so you can
-recognise it if you have multiple VM's up and running, e.g. when running::
+Available extensions (under a switch):
 
-    vagrant global-status
+- Extension - `$role_extension`
+- ...
 
-... to remind yourself where all your RAM went.
+Callable tasks:
 
-The *ansible.cfg* file tells ansible how to find the Vagrant SSH login 
-details, which makes it easy to run Ansible manually against your 
-VM via the command line, rather than indirectly
-by re-running Vagrant commands - this can speed up testing.
+- `task`: ...
 
-Requirements
-------------
+Role variables:
 
-[Vagrant-cachier](http://fgrehm.viewdocs.io/vagrant-cachier/) is recommended,
-but optional.
+- `$role_` - desc
 
-This template includes an ansible-galaxy requirements file that pulls in
-the [timstaley.base](https://github.com/timstaley/ansible-base) role, used
-for configuring basic utilities on a fresh virtual-machine.
-However, this is not a hard dependency, since users of a role may have their
-own preferences as to e.g. exactly how `pip` gets installed.
-To retrieve a copy of the roles listed in a requirements file, run::
+Usage
+-----
 
-    ansible-galaxy install -r requirements.yml
+Clone this repo into your roles directory:
 
-or
+    $ git clone https://gitlab.enix.org/ansible/ansible-$role.git roles/$role
 
-    ansible-galaxy install --force -r requirements.yml
+Or use Ansible galaxy requirements.yml
 
-to forcibly update old copies.
+And add it to your play's roles:
 
-Note that *[ansible.cfg](vagrant/ansible.cfg)* is configured such that 
-roles installed via Ansible Galaxy will be installed under 
-*vagrant/galaxy_roles*.
+    - hosts: ...
+      roles:
+        - $role
+        - ...
 
-When documenting a role, you should either specify expected 
-pre-requisites (e.g. git) in the README, or if your dependencies 
-are provided by a specific role then you should record it in the 
-role metadata ([see docs](https://galaxy.ansible.com/intro#dependencies)).
+This roles comes preloaded with almost every available default. You can override each one in your hosts/group vars, in your inventory, or in your play. See the annotated defaults in `defaults/main.yml` for help in configuration. All provided variables start with `$role_`.
 
-License
--------
+You can also use the role as a playbook. You will be asked which hosts to provision, and you can further configure the play by using `--extra-vars`.
 
-BSD
+    $ ansible-playbook -i inventory --extra-vars='{...}' main.yml
+
+
+Still to do
+-----------
+
+- Write the role itself, for one
+
+
+Changelog
+---------
+
+### 0.1
+
+Initial version.
