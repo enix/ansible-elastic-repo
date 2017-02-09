@@ -1,7 +1,5 @@
 - hosts: test
 
-
   roles:
-    - timstaley.base
-    - { role: ../../roletemplate,
+    - { role: ../../ansible-elastic-repo,
         }

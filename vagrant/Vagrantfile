@@ -2,22 +2,23 @@
 # vi: set ft=ruby :
 
 Vagrant.configure(2) do |config|
-  config.vm.box = "ubuntu/trusty64"
-  config.vm.define "roletestingvm" do |roletestingvm| end
+  config.vm.box = "debian/jessie64"
+  config.vm.define "vmjessie64" do |vmjessie64| end
 
   config.vm.provider "virtualbox" do |v|
-      v.memory = 1024
-      v.cpus = 2
+      v.memory = 512
+      v.cpus = 1
   end
 
   config.vm.provision "ansible" do |ansible|
     ansible.playbook = "../tests/test-roletemplate.yml"
     ansible.verbose = "vv"
+    ansible.sudo = true
     ansible.groups = {
-      "test" => ["roletestingvm"],
+      "test" => ["vmjessie64"],
       }
   end
- 
+
   if Vagrant.has_plugin?("vagrant-cachier")
     # Configure cached packages to be shared between instances of the same base box.
     # More info on http://fgrehm.viewdocs.io/vagrant-cachier/usage
