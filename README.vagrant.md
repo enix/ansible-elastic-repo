@@ -1,7 +1,11 @@
 Ansible Role Template
 =====================
 
-A template for an Ansible-role, adding Vagrant-testing support to the 
+**All this part needed to be tested. taken asis from upstream**
+
+
+
+A template for an Ansible-role, adding Vagrant-testing support to the
 default Ansible-role skeleton.
 
 Ansible is a great tool, and trying things out with a virtual-machine is a
@@ -16,9 +20,9 @@ tl;dr:
 **To get this template running:**
 
     git clone git@github.com:timstaley/ansible-role-template.git roletemplate
-    
+
 NB the local folder-name is important - that's how we refer back to the
-role from the test-script, and so the folder-name should match the 
+role from the test-script, and so the folder-name should match the
 role-name.
 
     cd roletemplate/vagrant
@@ -27,13 +31,13 @@ role-name.
 **To use this template for your own stand-alone role:**
 
     git clone git@github.com:timstaley/ansible-role-template.git myrolename
-Now edit myrolename/tests/test-roletemplate.yml to change the role name 
+Now edit myrolename/tests/test-roletemplate.yml to change the role name
 to your own, accordingly. Then get started making changes to write your
 own role.
 
 Notes
 ------
-*Vagrantfile* sets up a testing virtual-machine, 
+*Vagrantfile* sets up a testing virtual-machine,
 by default named `roletestingvm` (see [Vagrantfile](vagrant/Vagrantfile)).
 This should be renamed to something sensible for your role so you can
 recognise it if you have multiple VM's up and running, e.g. when running::
@@ -42,8 +46,8 @@ recognise it if you have multiple VM's up and running, e.g. when running::
 
 ... to remind yourself where all your RAM went.
 
-The *ansible.cfg* file tells ansible how to find the Vagrant SSH login 
-details, which makes it easy to run Ansible manually against your 
+The *ansible.cfg* file tells ansible how to find the Vagrant SSH login
+details, which makes it easy to run Ansible manually against your
 VM via the command line, rather than indirectly
 by re-running Vagrant commands - this can speed up testing.
 
@@ -68,13 +72,13 @@ or
 
 to forcibly update old copies.
 
-Note that *[ansible.cfg](vagrant/ansible.cfg)* is configured such that 
-roles installed via Ansible Galaxy will be installed under 
+Note that *[ansible.cfg](vagrant/ansible.cfg)* is configured such that
+roles installed via Ansible Galaxy will be installed under
 *vagrant/galaxy_roles*.
 
-When documenting a role, you should either specify expected 
-pre-requisites (e.g. git) in the README, or if your dependencies 
-are provided by a specific role then you should record it in the 
+When documenting a role, you should either specify expected
+pre-requisites (e.g. git) in the README, or if your dependencies
+are provided by a specific role then you should record it in the
 role metadata ([see docs](https://galaxy.ansible.com/intro#dependencies)).
 
 License
