@@ -1,0 +1,27 @@
+---
+
+- name: 'Install APT dependencies'
+  apt:
+    pkg: "{{ item }}"
+    state: present
+  with_items:
+    - apt-transport-https
+
+#- name: 'Copy to host GPG key'
+#  copy:
+#    src: "{{ elastic_gpg_file }}"
+#    dest: "/tmp/{{ elastic_gpg_file }}"
+
+#- name: 'Add elastic.co GPG key'
+#  apt_key:
+#    file: "/tmp/{{ elastic_gpg_file }}"
+
+- name: 'Add elastic.co GPG key'
+  apt_key:
+    url: "{{ elastic_gpg_url }}"
+
+- name: 'Add elastic.co APT repository'
+  apt_repository:
+    repo: "{{ elastic_apt_repo }}"
+    state: present
+    update_cache: yes

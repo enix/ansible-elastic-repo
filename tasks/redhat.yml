@@ -1,0 +1,13 @@
+---
+
+- name: 'Add elastic.co GPG key'
+  rpm_key:
+    key: "{{ elastic_gpg_url }}"
+
+- name: 'Create elastic.co yum repo'
+  yum_repository:
+    name: elastic.co
+    baseurl: "{{ elastic_yum_repo_url }}"
+    enabled: yes
+    gpgcheck: yes
+    gpgkey: "{{ elastic_gpg_url }}"

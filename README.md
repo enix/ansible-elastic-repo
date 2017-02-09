@@ -1,43 +1,29 @@
-$ROLE for Ansible
+enix/ansible-elastic-repo for Ansible
 =================
 
-A role for deploying and configuring [$ROLE](http://$role.com) and extensions on unix hosts using [Ansible](http://www.ansible.com/).
-
+A role for deploying softare repository from [elastic.co](http://www.elastic.co). It provide Elastic Search, Logstash and Kibana software suite.
 
 Supports
 --------
 
 Supported targets:
 
-- Ubuntu 12.04 "Precise Pangolin"
 - Debian 8 "Jessie"
-- ...
+- RedHat EL 6/7
 
 Dependencies:
 
 - None
 
-Available extensions (under a switch):
-
-- Extension - `$role_extension`
-- ...
-
-Callable tasks:
-
-- `task`: ...
-
-Role variables:
-
-- `$role_` - desc
 
 Usage
 -----
 
 Clone this repo into your roles directory:
 
-    $ git clone https://gitlab.enix.org/ansible/ansible-$role.git roles/$role
+    $ git clone https://gitlab.enix.org/ansible/ansible-elastic-repo.git roles/elastic-repo
 
-Or use Ansible galaxy requirements.yml
+Or use Ansible galaxy requirements.yml, or integrated Dependencies into role meta informations.
 
 And add it to your play's roles:
 
@@ -46,7 +32,7 @@ And add it to your play's roles:
         - $role
         - ...
 
-This roles comes preloaded with almost every available default. You can override each one in your hosts/group vars, in your inventory, or in your play. See the annotated defaults in `defaults/main.yml` for help in configuration. All provided variables start with `$role_`.
+This roles comes preloaded with almost every available default. You can override each one in your hosts/group vars, in your inventory, or in your play. See the annotated defaults in `defaults/main.yml` for help in configuration. All provided variables start with `elastic_`.
 
 You can also use the role as a playbook. You will be asked which hosts to provision, and you can further configure the play by using `--extra-vars`.
 
@@ -56,7 +42,9 @@ You can also use the role as a playbook. You will be asked which hosts to provis
 Still to do
 -----------
 
-- Write the role itself, for one
+- Make a var to install either local GPG key using file or by default with external url
+- Make it compatible with Ubuntu distributions and newer debian releases (Using generated apt repo informations)
+- Make tests working on all systems
 
 
 Changelog
