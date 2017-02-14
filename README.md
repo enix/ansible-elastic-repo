@@ -1,4 +1,4 @@
-enix/ansible-elastic-repo for Ansible
+enix/elastic-repo for Ansible
 =================
 
 A role for deploying softare repository from [elastic.co](http://www.elastic.co). It provide Elastic Search, Logstash and Kibana software suite.
@@ -21,7 +21,7 @@ Usage
 
 Clone this repo into your roles directory:
 
-    $ git clone https://gitlab.enix.org/ansible/ansible-elastic-repo.git roles/elastic-repo
+    $ git clone ssh://gitlab.enix.org/ansible/ansible-elastic-repo.git roles/elastic-repo
 
 Or use Ansible galaxy requirements.yml, or integrated Dependencies into role meta informations.
 
@@ -45,6 +45,7 @@ Still to do
 - Make a var to install either local GPG key using file or by default with external url
 - Make it compatible with Ubuntu distributions and newer debian releases (Using generated apt repo informations)
 - Make tests working on all systems
+- Relabel debian: / RedHat: tasks
 
 
 Changelog
