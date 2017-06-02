@@ -8,6 +8,7 @@ Supports
 
 Supported targets:
 
+- Debian 7 "wheezy"
 - Debian 8 "Jessie"
 - RedHat EL / CentOS 6
 - RedHat EL / CentOS 7
