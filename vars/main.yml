@@ -1,7 +1,7 @@
 ---
 # vars file for roletemplate
 
-elastic_apt_repo: "deb http://artifacts.elastic.co/packages/5.x/apt stable main"
+elastic_apt_repo: "deb https://artifacts.elastic.co/packages/5.x/apt stable main"
 elastic_yum_repo_url: https://artifacts.elastic.co/packages/5.x/yum
 
 elastic_gpg_file: GPG-KEY-elasticsearch
