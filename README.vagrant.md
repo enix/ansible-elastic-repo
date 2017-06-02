@@ -1,12 +1,5 @@
-Ansible Role Template
+Test ansible role using Vagrant
 =====================
-
-**All this part needed to be tested. taken asis from upstream**
-
-
-
-A template for an Ansible-role, adding Vagrant-testing support to the
-default Ansible-role skeleton.
 
 Ansible is a great tool, and trying things out with a virtual-machine is a
 great way to learn, try things out, and test changes. But if you're trying
@@ -17,28 +10,23 @@ to set-up Vagrant to test your new Ansible role.
 
 tl;dr:
 ------
-**To get this template running:**
 
-    git clone git@github.com:timstaley/ansible-role-template.git roletemplate
+To startup tests simply run:
 
-NB the local folder-name is important - that's how we refer back to the
-role from the test-script, and so the folder-name should match the
-role-name.
-
-    cd roletemplate/vagrant
+    cd vagrant/
     vagrant up
 
-**To use this template for your own stand-alone role:**
+In case you want to relaunch the tests, restart vagrant provision
+    vagrant provision
 
-    git clone git@github.com:timstaley/ansible-role-template.git myrolename
-Now edit myrolename/tests/test-roletemplate.yml to change the role name
-to your own, accordingly. Then get started making changes to write your
-own role.
+For debugging purpose vagrant provide an easy way to connect inside the VM
+    vagrant ssh
+
 
 Notes
 ------
 *Vagrantfile* sets up a testing virtual-machine,
-by default named `roletestingvm` (see [Vagrantfile](vagrant/Vagrantfile)).
+by default named `debianjessie64` (see [Vagrantfile](vagrant/Vagrantfile)).
 This should be renamed to something sensible for your role so you can
 recognise it if you have multiple VM's up and running, e.g. when running::
 
@@ -57,11 +45,6 @@ Requirements
 [Vagrant-cachier](http://fgrehm.viewdocs.io/vagrant-cachier/) is recommended,
 but optional.
 
-This template includes an ansible-galaxy requirements file that pulls in
-the [timstaley.base](https://github.com/timstaley/ansible-base) role, used
-for configuring basic utilities on a fresh virtual-machine.
-However, this is not a hard dependency, since users of a role may have their
-own preferences as to e.g. exactly how `pip` gets installed.
 To retrieve a copy of the roles listed in a requirements file, run::
 
     ansible-galaxy install -r requirements.yml
@@ -83,5 +66,4 @@ role metadata ([see docs](https://galaxy.ansible.com/intro#dependencies)).
 
 License
 -------
-
-BSD
+GPLv2

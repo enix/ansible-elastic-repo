@@ -9,7 +9,8 @@ Supports
 Supported targets:
 
 - Debian 8 "Jessie"
-- RedHat EL 6/7
+- RedHat EL / CentOS 6
+- RedHat EL / CentOS 7
 
 Dependencies:
 
@@ -23,16 +24,17 @@ Clone this repo into your roles directory:
 
     $ git clone ssh://gitlab.enix.org/ansible/ansible-elastic-repo.git roles/elastic-repo
 
-Or use Ansible galaxy requirements.yml, or integrated Dependencies into role meta informations.
+Or use Ansible galaxy requirements.yml
+
+    # $ROLE from enix
+    - src: git+ssh://git@gitlab.enix.org/ansible/ansible-$ROLE.git
+      name: $ROLE
 
 And add it to your play's roles:
 
     - hosts: ...
       roles:
         - $role
-        - ...
-
-This roles comes preloaded with almost every available default. You can override each one in your hosts/group vars, in your inventory, or in your play. See the annotated defaults in `defaults/main.yml` for help in configuration. All provided variables start with `elastic_`.
 
 You can also use the role as a playbook. You will be asked which hosts to provision, and you can further configure the play by using `--extra-vars`.
 
