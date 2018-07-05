@@ -1,6 +1,6 @@
 ---
 
-- name: 'Install APT dependencies'
+- name: 'Debian: Install APT dependencies'
   apt:
     pkg: "{{ item }}"
     state: present
@@ -16,11 +16,11 @@
 #  apt_key:
 #    file: "/tmp/{{ elastic_gpg_file }}"
 
-- name: 'Add elastic.co GPG key'
+- name: 'Debian: Add elastic.co GPG key'
   apt_key:
     url: "{{ elastic_gpg_url }}"
 
-- name: 'Add elastic.co APT repository'
+- name: 'Debian: Add elastic.co APT repository'
   apt_repository:
     repo: "{{ elastic_apt_repo }}"
     state: present
