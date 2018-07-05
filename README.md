@@ -11,6 +11,8 @@ Supported targets:
 - Debian 7 "wheezy"
 - Debian 8 "Jessie"
 - Debian 9 "Stretch"
+- Ubuntu 16.04 "Xenial"
+- Ubuntu 18.04 "Bionic"
 - RedHat EL / CentOS 6
 - RedHat EL / CentOS 7
 
