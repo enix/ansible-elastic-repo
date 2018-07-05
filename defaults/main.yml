@@ -1,2 +1,4 @@
 ---
 # defaults file for roletemplate
+
+elastic_repo__branch: 5.x
