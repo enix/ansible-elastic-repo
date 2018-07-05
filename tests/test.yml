@@ -2,3 +2,4 @@
 - hosts: test
   roles:
     - role: '../../.'
+      elastic_repo__branch: 6.x
