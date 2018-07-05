@@ -45,9 +45,9 @@ ubuntu-xenial:
   image: ansiblecheck/ansiblecheck:ubuntu-xenial
   <<: *ansible_test
 
-ubuntu-bionic:
-  image: ansiblecheck/ansiblecheck:ubuntu-bionic
-  <<: *ansible_test
+# ubuntu-bionic:
+#   image: ansiblecheck/ansiblecheck:ubuntu-bionic
+#   <<: *ansible_test
 
 centos-6:
   image: ansiblecheck/ansiblecheck:centos-6
