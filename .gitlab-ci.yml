@@ -33,9 +33,9 @@ debian-jessie:
   image: ansiblecheck/ansiblecheck:debian-jessie
   <<: *ansible_test
 
-# debian-stretch:
-#   image: ansiblecheck/ansiblecheck:debian-stretch
-#   <<: *ansible_test
+debian-stretch:
+  image: ansiblecheck/ansiblecheck:debian-stretch
+  <<: *ansible_test
 
 # ubuntu-trusty:
 #   image: ansiblecheck/ansiblecheck:ubuntu-trusty

@@ -10,6 +10,7 @@ Supported targets:
 
 - Debian 7 "wheezy"
 - Debian 8 "Jessie"
+- Debian 9 "Stretch"
 - RedHat EL / CentOS 6
 - RedHat EL / CentOS 7
 
@@ -29,7 +30,6 @@ Or use Ansible galaxy requirements.yml
 
     # eNiXHosting.elastic-repo galaxy role
     - src: eNiXHosting.elastic-repo
-      name: elastic-repo
 
 And add it to your play's roles:
 
@@ -52,6 +52,9 @@ Still to do
 
 Changelog
 ---------
+
+### 2.0
+ Debian 9 Stretch support
 
 ### 1.0
 
