@@ -4,6 +4,7 @@
   apt:
     pkg: "{{ item }}"
     state: present
+    update: yes
   with_items:
     - apt-transport-https
 

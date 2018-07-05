@@ -48,7 +48,6 @@ Still to do
 -----------
 
 - Make a var to install either local GPG key using file or by default with external url
-- Make it compatible with Ubuntu distributions and newer debian releases (Using generated apt repo informations)
 
 
 Changelog
