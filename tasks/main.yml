@@ -1,5 +1,11 @@
 ---
 
+- name: 'copy elastic repo GPG key'
+  copy:
+    src: "{{ elastic_gpg_file }}"
+    dest: "/tmp/{{ elastic_gpg_file }}"
+  when: elastic_repo__local_gpgkey
+
 - include: debian.yml
   when: ansible_os_family == 'Debian'
 
