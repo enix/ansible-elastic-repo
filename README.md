@@ -50,7 +50,6 @@ You can also use the role as a playbook. You will be asked which hosts to provis
 Still to do
 -----------
 
-- Make a var to install either local GPG key using file or by default with external url
 
 
 Changelog
