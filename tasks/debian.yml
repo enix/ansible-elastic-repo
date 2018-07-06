@@ -8,7 +8,7 @@
   with_items:
     - apt-transport-https
 
-- name: 'Add elastic.co GPG key'
+- name: 'Debian: Add local elastic.co GPG key'
   apt_key:
     file: "/tmp/{{ elastic_gpg_file }}"
   when: elastic_repo__local_gpgkey

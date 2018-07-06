@@ -3,7 +3,7 @@
 - name: 'RedHat: Add elastic.co GPG key'
   rpm_key:
     state: present
-    key: "{{ elastic_repo__local_gpgkey | ternary('/tmp/'elastic_gpg_file , elastic_gpg_url) }}"
+    key: "{{ elastic_repo__local_gpgkey | ternary('/tmp/{{ elastic_gpg_file }}', elastic_gpg_url) }}"
 
 - name: 'RedHat: Create elastic.co yum repo'
   yum_repository:
