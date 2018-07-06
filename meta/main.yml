@@ -1,5 +1,6 @@
 ---
 galaxy_info:
+  role_name: elastic-repo
   author: Laurent CORBES <laurent.corbes@enix.fr>
   description: Ansible role to install Elastic.co software repository
   company: Enix Hosting (http://www.enix.fr)
