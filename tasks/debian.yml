@@ -16,7 +16,7 @@
 - name: 'Debian: Add elastic.co GPG key'
   apt_key:
     url: "{{ elastic_gpg_url }}"
-  when: elastic_repo__local_gpgkey is undefined
+  when: not elastic_repo__local_gpgkey
 
 - name: 'Debian: Add elastic.co APT repository'
   apt_repository:
