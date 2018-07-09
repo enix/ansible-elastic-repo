@@ -55,11 +55,15 @@ Still to do
 Changelog
 ---------
 
-### 2.0
+### 2.1.0
+
+Add support for local GPG key delivery
+
+### 2.0.0
 Debian 9 Stretch support
 Ubuntu Xenial and Bionic support
 Allow 5.x and 6.x repository branches
 
-### 1.0
+### 1.0.0
 
 Initial version.
