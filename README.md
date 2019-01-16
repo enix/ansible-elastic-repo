@@ -1,4 +1,4 @@
-eNiXHosting.elastic-repo for Ansible
+enix.elastic_repo for Ansible
 =================
 
 A role for deploying softare repository from [elastic.co](http://www.elastic.co). It provide Elastic Search, Logstash and Kibana software suite.
@@ -29,18 +29,17 @@ Usage
 
 Clone this repo into your roles directory:
 
-    $ git clone ssh://gitlab.enix.org/ansible/ansible-elastic-repo.git roles/elastic-repo
+    $ git clone ssh://gitlab.enix.org/ansible/ansible-elastic-repo.git roles/elastic_repo
 
 Or use Ansible galaxy requirements.yml
 
-    # eNiXHosting.elastic-repo galaxy role
-    - src: eNiXHosting.elastic-repo
+    # enix.elastic_repo galaxy role
 
 And add it to your play's roles:
 
     - hosts: ...
       roles:
-        - elastic-repo
+        - enix.elastic_repo
 
 You can also use the role as a playbook. You will be asked which hosts to provision, and you can further configure the play by using `--extra-vars`.
 
