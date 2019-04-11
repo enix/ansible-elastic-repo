@@ -54,6 +54,12 @@ Still to do
 Changelog
 ---------
 
+### 2.2.1
+Add support for more distribution
+
+### 2.2.0
+Change rolename to enix/elastic_repo
+
 ### 2.1.0
 
 Add support for local GPG key delivery
