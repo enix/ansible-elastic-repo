@@ -8,6 +8,7 @@ env:
       distribution_version: xenial
       init: /lib/systemd/systemd
       run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+      ANSIBLE_PYTHON_INTERPRETER: /usr/bin/python3
     # - distribution: Ubuntu
     #   distribution_version: trusty
     #   init: /sbin/init
