@@ -8,6 +8,7 @@
   with_items:
     - apt-transport-https
     - gnupg
+    - ca-certificates
 
 - name: 'Debian: Add local elastic.co GPG key'
   apt_key:
