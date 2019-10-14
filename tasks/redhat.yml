@@ -12,5 +12,5 @@
     baseurl: "{{ elastic_yum_repo_url }}"
     enabled: yes
     gpgcheck: yes
-    gpgkey: "{{ elastic_gpg_url }}"
+    # gpgkey: "{{ elastic_gpg_url }}"
     state: present
