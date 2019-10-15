@@ -13,4 +13,6 @@
     enabled: yes
     gpgcheck: yes
     # gpgkey: "{{ elastic_gpg_url }}"
+    skip_if_unavailable: yes
+    timeout: 10
     state: present
