@@ -8,9 +8,9 @@ Supports
 
 Supported targets:
 
-- Debian 7 "wheezy"
 - Debian 8 "Jessie"
 - Debian 9 "Stretch"
+- Debian 10 "Buster"
 - Ubuntu 16.04 "Xenial"
 - Ubuntu 18.04 "Bionic"
 - RedHat EL / CentOS 6
