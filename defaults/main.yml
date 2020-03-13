@@ -1,5 +1,5 @@
 ---
 # defaults file for roletemplate
 
-elastic_repo__branch: 5.x
+elastic_repo__branch: 7.x
 elastic_repo__local_gpgkey: false

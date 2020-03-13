@@ -21,7 +21,7 @@ Role Variables
 
 This roles comes preloaded with almost every available default. You can override each one in your hosts/group vars, in your inventory, or in your play. See the annotated defaults in `defaults/main.yml` for help in configuration. All provided variables start with `elastic_repo__`.
 
-- `elastic_repo__branch: 5.x` - Branch of repository to setup on the host. curently supported: 5.x, 6.x.
+- `elastic_repo__branch: 7.x` - Branch of repository to setup on the host. curently supported: 5.x, 6.x, 7.x.
 - `elastic_repo__local_gpgkey: false` - Use local copy of elastic.co repository GPG key, shipped with the role. Can be usefull for hosts that don't have direct access to internet (using apt-proxy).
 
 Usage
@@ -53,6 +53,10 @@ Still to do
 
 Changelog
 ---------
+### 2.3.0
+Add Debian Buster support
+Update to 7.x branch by default
+
 
 ### 2.2.1
 Add support for more distribution
