@@ -2,8 +2,10 @@
 # vi: set ft=ruby :
 
 Vagrant.configure(2) do |config|
-  config.vm.box = "debian/jessie64"
-  config.vm.define "debianjessie64" do |debianjessie64| end
+  # config.vm.box = "debian/jessie64"
+  # config.vm.define "debianjessie64" do |debianjessie64| end
+  config.vm.box = "centos/7"
+  config.vm.define "centos7" do |centos7| end
 
   config.vm.provider "virtualbox" do |v|
       v.memory = 512
@@ -15,7 +17,8 @@ Vagrant.configure(2) do |config|
     ansible.verbose = "vvv"
     ansible.sudo = true
     ansible.groups = {
-      "test" => ["debianjessie64"],
+      # "test" => ["debianjessie6"],
+      "test" => ["centos7"],
       }
   end
 
